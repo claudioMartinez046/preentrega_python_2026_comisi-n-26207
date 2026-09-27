@@ -71,6 +71,37 @@ while opcion != "5":
                     print("Precio: $", producto[2])
                     print("")
         case "4":
-            print("")
+            print("_________________________________")
+            print("Eliminar producto")
+            print("_________________________________")
+
+            productoParaEliminar = input("Que producto queres eliminar?: ").strip()#.title()
+            encontrado = False
+
+            for producto in stock:
+                if productoParaEliminar == producto[0]:
+                    encontrado = True
+                    print("_________________________________")
+                    print("Producto encontrado")
+                    print("_________________________________")
+                    print("Producto:", producto[0])
+                    print("Categoria:", producto[1])
+                    print("Precio: $", producto[2])
+                    print("")
+
+
+                    desicion = input(f"deseas eliminar el {producto[0]}? (si/no): ").strip().lower()
+                    if desicion =="si":
+                        stock.remove(producto)
+                        print("El producto fue eliminado exitosamente")
+
+            if encontrado == False:   
+                print("El producto no se encuentra o ya fue eliminado.")         
         case "5":
-            print("")
+            print("_________________________________")
+            print("Gracias por usar el sistema de stock")
+            print("_________________________________")
+        case _:
+            print("_________________________________")
+            print("Opción no válida")
+            print("_________________________________")
